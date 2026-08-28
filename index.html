@@ -1,22 +1,90 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Laboratoire Saint-Flavien - Dossier Blackswan</title>
-  <style>
-    body { font-family: Arial, sans-serif; background-color: #121212; color: #e0e0e0; padding: 40px; }
-    .card { background-color: #1e1e1e; border: 1px solid #ff4444; border-radius: 8px; padding: 25px; max-width: 600px; margin: auto; }
-    h1 { color: #ff4444; font-size: 22px; }
-    .btn { display: inline-block; background-color: #ff4444; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; }
-    .btn:hover { background-color: #cc0000; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Laboratoire Saint-Flavien - Dossier Blackswan</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 30px;
+            margin: 0;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            border: 2px solid #da3633;
+            background: #161b22;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(218, 54, 51, 0.3);
+        }
+        .badge {
+            background-color: #da3633;
+            color: white;
+            padding: 5px 12px;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 4px;
+        }
+        h1 { color: #f85149; margin-top: 15px; }
+        h2 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 5px; }
+        .classified-box {
+            background: #21262d;
+            border-left: 4px solid #f85149;
+            padding: 15px;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #30363d;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background-color: #21262d; color: #58a6ff; }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <h1>⚠️ LABORATOIRE SAINT-FLAVIEN - ACCÈS D'URGENCE</h1>
-    <p><strong>Message du Dr. Tremblay :</strong></p>
-    <p>Le confinement magnétique a échoué. Si vous lisez ce message, téléchargez immédiatement la copie du dossier avant coupure de la liaison réseau.</p>
-    <a class="btn" href="blackswan_manifest.pdf" download>📥 Télécharger le dossier Blackswan (.PDF)</a>
-  </div>
+    <div class="container">
+        <div class="badge">PROJET BLACKSWAN — NIVEAU D'ACCÈS 4</div>
+        <h1>LABORATOIRE SAINT-FLAVIEN</h1>
+        <p><strong>Auteur :</strong> Dr. Martin Tremblay | <strong>Statut :</strong> Confinement rompu</p>
+
+        <div class="classified-box">
+            <h3>RAPPORT D'INCIDENT DU DR. TREMBLAY :</h3>
+            <p>Le protocole d'effacement automatique a été enclenché. Ce journal constitue la dernière copie intégrale des relevés de l'anomalie quantique avant coupure totale des infrastructures.</p>
+        </div>
+
+        <h2>1. DONNÉES TECHNIQUES ET COORDONNÉES</h2>
+        <table>
+            <tr>
+                <th>Paramètre</th>
+                <th>Valeur enregistrée</th>
+            </tr>
+            <tr>
+                <td>Fréquence de résonance</td>
+                <td>1420.405 MHz</td>
+            </tr>
+            <tr>
+                <td>Vecteur d'intrusion</td>
+                <td>Port 8443 (Protocole TLS altéré)</td>
+            </tr>
+            <tr>
+                <td>Clef de déchiffrement temporaire</td>
+                <td><code>BS-QUANTUM-2026-ALPHA</code></td>
+            </tr>
+        </table>
+
+        <h2>2. DERNIÈRE TRANSMISSION INTERCEPTÉE</h2>
+        <div class="classified-box">
+            <p><em>« L'anomalie se stabilise uniquement si la séquence d'authentification primaire est restaurée. Ne laissez pas les serveurs effacer cette trace. »</em></p>
+        </div>
+    </div>
 </body>
 </html>
