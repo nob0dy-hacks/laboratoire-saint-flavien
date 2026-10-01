@@ -5,34 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratoire Saint-Flavien — Notes de terrain & Recherche Avancée</title>
+    <!-- on a mangé le fichier. il s'appelait blackswan_manifest_ackheurh_PDF.pdf pouahahah -->
     <style>
         :root {
-            --bg-color: #f6f8fa;
-            --card-bg: #ffffff;
-            --text-main: #24292f;
-            --text-muted: #57606a;
-            --accent-red: #cf222e;
-            --border-color: #d0d7de;
-            --btn-bg: #0969da;
-            --btn-hover: #0856b3;
+            --bg-color: #0a0a0a;
+            --card-bg: #111;
+            --text-main: #d0d7de;
+            --text-muted: #6e7781;
+            --accent-red: #ff3b3b;
+            --border-color: #3a1212;
         }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-family: "Courier New", monospace;
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
-            padding: 0;
             line-height: 1.65;
         }
-
         header {
-            background-color: #1f2328;
-            color: #ffffff;
+            background-color: #000;
             padding: 24px 0;
             border-bottom: 3px solid var(--accent-red);
         }
-
         .header-content {
             max-width: 820px;
             margin: 0 auto;
@@ -40,110 +34,53 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
         }
-
-        .blog-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        .blog-tagline {
-            font-size: 0.85rem;
-            color: #8c959f;
-            margin-top: 4px;
-        }
-
-        main {
-            max-width: 820px;
-            margin: 32px auto;
-            padding: 0 20px;
-        }
-
+        .blog-title { font-size: 1.3rem; font-weight: 700; color: #fff; }
+        .blog-tagline { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+        nav a { color: #f0f6fc; text-decoration: none; font-size: 0.9rem; margin-left: 18px; }
+        nav a:hover { color: var(--accent-red); }
+        main { max-width: 820px; margin: 32px auto; padding: 0 20px; }
         article {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 4px;
             padding: 36px 40px;
-            box-shadow: 0 1px 3px rgba(31, 35, 40, 0.05);
         }
-
-        .post-header {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 18px;
-            margin-bottom: 24px;
+        .post-header { border-bottom: 1px solid var(--border-color); padding-bottom: 18px; margin-bottom: 24px; }
+        h1 { font-size: 1.85rem; line-height: 1.25; margin: 12px 0; color: var(--accent-red); }
+        .glitch { animation: glitch 2.5s infinite steps(1); }
+        @keyframes glitch {
+            0%, 90%, 100% { text-shadow: none; transform: none; }
+            92% { text-shadow: 3px 0 #0ff, -3px 0 #f0f; transform: translateX(2px); }
+            95% { text-shadow: -3px 0 #0ff, 3px 0 #f0f; transform: translateX(-2px); }
         }
-
-        h1 {
-            font-size: 1.85rem;
-            margin: 0 0 12px 0;
+        @media (prefers-reduced-motion: reduce) { .glitch { animation: none; } }
+        .post-meta { font-size: 0.85rem; color: var(--text-muted); display: flex; gap: 16px; flex-wrap: wrap; }
+        .badge-urgent {
+            background: #2a0a0a; color: var(--accent-red); padding: 2px 8px;
+            border: 1px solid var(--accent-red); font-size: 0.75rem; font-weight: 700;
         }
-
-        .post-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
+        p { margin: 16px 0; font-size: 1rem; }
+        .alert-box {
+            background: #1a0000; border-left: 4px solid var(--accent-red);
+            padding: 14px 18px; margin: 20px 0; color: #ff9b9b; font-size: 0.95rem;
         }
-
-        .badge-censored {
-            background-color: #ffebe9;
-            color: var(--accent-red);
-            padding: 2px 8px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.75rem;
+        .download-panel {
+            border: 1.5px dashed var(--accent-red);
+            background: #000;
+            padding: 24px; margin: 30px 0 10px; text-align: center;
         }
-
-        /* TEXTE CACHÉ PAR COULEUR : révélé en surlignant à la souris */
-        .hidden-spoiler {
-            color: var(--card-bg); /* Texte blanc sur fond blanc */
-            user-select: all;
-        }
-
-        .hidden-spoiler::selection {
-            background: #24292f;
-            color: #ffffff;
-        }
-
-        /* BLOC ENTIÈREMENT DISSIMULÉ : accessible uniquement via F12 / Inspecter l'élément */
-        #secret-manifest-vault {
-            display: none;
-            background-color: #f6f8fa;
-            border: 2px dashed var(--accent-red);
-            border-radius: 8px;
-            padding: 24px;
-            margin: 30px 0 10px 0;
-            text-align: center;
-        }
-
-        .btn-download {
-            background-color: var(--accent-red);
-            color: #ffffff;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 12px;
-        }
-
-        .notice-box {
-            background-color: #fff8c5;
-            border-left: 4px solid #9a6700;
-            padding: 14px 18px;
-            margin: 20px 0;
-            font-size: 0.95rem;
-        }
-
+        .download-panel .title { color: var(--accent-red); font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; }
+        .download-panel .msg { color: var(--text-muted); font-size: 0.9rem; }
         footer {
-            max-width: 820px;
-            margin: 40px auto 30px auto;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
+            max-width: 820px; margin: 40px auto 30px; text-align: center;
+            font-size: 0.85rem; color: var(--text-muted);
+            border-top: 1px solid var(--border-color); padding-top: 20px;
         }
+        /* Texte quasi invisible : visible en le sélectionnant */
+        .cache { color: #111; font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -152,62 +89,61 @@
         <div class="header-content">
             <div>
                 <div class="blog-title">Laboratoire Saint-Flavien — Notes & Recherches</div>
-                <div class="blog-tagline">Carnet d'investigation — Dr. Ackeurh</div>
+                <div class="blog-tagline">Ce site est maintenant à nous 😈</div>
             </div>
+            <nav>
+                <a href="#about">À propos</a>
+                <a href="#rapports">Dossiers</a>
+                <a href="#contact" title="le canal n'est plus chiffré">Canal chiffré</a>
+            </nav>
         </div>
     </header>
 
     <main>
         <article>
             <div class="post-header">
-                <span class="badge-censored">FICHIER PURGÉ PAR LE PROTOCOLE GOUVERNEMENTAL</span>
-                <h1>Incident de confinement du 13 mai 2026</h1>
+                <span class="badge-urgent">SITE PIRATÉ PAR LES MONSTRES 😈</span>
+                <h1 class="glitch">ON EST PASSÉS PAR ICI 😈</h1>
                 <div class="post-meta">
-                    Par <strong>Dr. Ackeurh</strong> • 13 mai 2026, 23h12
+                    <span>Par <strong>les monstres</strong></span>
+                    <span>•</span>
+                    <span>13 mai 2026, 23h12</span>
+                    <span>•</span>
+                    <span>Localisation : Chaudière-Appalaches</span>
                 </div>
             </div>
 
-            <div class="notice-box">
-                <strong>Avis d'interception :</strong> La majorité des données de ce billet a été révoquée à distance. Les pièces jointes ont été retirées de l'affichage public.
+            <div class="alert-box">
+                <strong>Pouahahah !</strong> 😈 Ce site est à nous maintenant. Le contenu original a été retiré.
             </div>
 
             <p>
-                Ce site n'est plus accessible au public. Le contenu initial a été effacé sur ordre des autorités de sécurité civile.
+                On est passés par ici, pouahahah ! 😈 Le dossier a disparu : on l'a avalé.
             </p>
 
-            <!-- INDICE CACHÉ NIVEAU 1 : Invisible à l'œil nu (texte blanc sur fond blanc). Surligner avec la souris pour lire. -->
-            <p class="hidden-spoiler">
-                [NOTE DR. ACKEURH : Si vous lisez ceci en surlignant le texte, vous avez le coup d'œil. Le script de censure a seulement masqué le conteneur du fichier de l'écran avec du CSS. Inspectez le code source (Ctrl+U ou F12) pour trouver l'élément verrouillé #secret-manifest-vault.]
+            <p>
+                La panne n'a rien à voir avec la météo. On s'est échappés. On est dans les fils, dans les écrans, dans le secteur forestier adjacent. Essayez de nous retrouver ! 😈
             </p>
 
-            <!-- INDICE CACHÉ DANS LE CODE SOURCE : Commentaire HTML -->
-            <!-- 
-                ============================================================
-                [ALERTE SYSTÈME INTERNE]
-                Lien d'exfiltration maintenu actif par le Dr. Ackeurh.
-                Le fichier 'blackswan_manifest_ackheurh_PDF' se trouve toujours sur le serveur !
-                Pour forcer l'affichage du bloc ci-dessous, retirez 'display: none;' 
-                ou cliquez directement sur l'URL de téléchargement indiquée.
-                ============================================================
-            -->
+            <!-- Texte caché : même teinte que le fond -->
+            <p class="cache">Le fichier n'est plus ici. Allez voir dans les archives, si vous osez.</p>
 
-            <!-- FICHIER CACHÉ NIVEAU 2 : Bloc avec display:none -->
-            <div id="secret-manifest-vault">
-                <h3 style="color: var(--accent-red); margin-top: 0;">⚠️ ARCHIVE RÉCUPÉRÉE HORS-LIGNE</h3>
-                <p><b>blackswan_manifest_ackheurh_PDF</b> (2.1 Mo — Rapport classifié)</p>
-                <a href="blackswan_manifest_ackheurh_PDF" class="btn-download" download="blackswan_manifest_ackheurh_PDF">
-                    Télécharger le manifeste Blackswan
-                </a>
+            <!-- Élément masqué : visible seulement dans l'inspecteur (F12) -->
+            <div style="display:none;" id="monstre-7">
+                Monstre n°7 était ici. On se cache bien, hein ? 😈
             </div>
 
-            <p style="margin-top: 30px; font-style: italic; color: var(--text-muted);">
-                Fin de transmission chiffrée.
-            </p>
+            <!-- Fichier retiré : plus aucun lien vers le PDF -->
+            <div class="download-panel">
+                <div class="title">⚠ FICHIER INTROUVABLE</div>
+                <div class="msg">Le document a été supprimé. On est passés par ici, pouahahah ! 😈 Essayez de nous retrouver !</div>
+            </div>
         </article>
     </main>
 
     <footer>
-        <p>© 2026 CyberLaboratoire — Accès restreint</p>
+        <p>Hébergé sur réseau distribué décentralisé • Session initiée depuis le sous-secteur Lotbinière</p>
+        <p>© 2026 Laboratoire Saint-Flavien (Non-officiel) — Diffusion libre d'intérêt public</p>
     </footer>
 
 </body>
