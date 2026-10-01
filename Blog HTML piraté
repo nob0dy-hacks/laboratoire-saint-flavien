@@ -194,7 +194,7 @@
             <!-- FICHIER CACHÉ NIVEAU 2 : Bloc avec display:none -->
             <div id="secret-manifest-vault">
                 <h3 style="color: var(--accent-red); margin-top: 0;">⚠️ ARCHIVE RÉCUPÉRÉE HORS-LIGNE</h3>
-                <p><b>blackswan_manifest.pdf</b> (2.1 Mo — Rapport classifié)</p>
+                <p><b>blackswan_manifest_ackheurh_PDF</b> (2.1 Mo — Rapport classifié)</p>
                 <a href="blackswan_manifest_ackheurh_PDF" class="btn-download" download="blackswan_manifest_ackheurh_PDF">
                     Télécharger le manifeste Blackswan
                 </a>
